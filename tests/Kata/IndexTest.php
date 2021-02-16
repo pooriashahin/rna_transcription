@@ -12,5 +12,14 @@ class IndexTest extends TestCase
         $this->index = new Index();
     }
 
+    public function testABecomesU(): void 
+    {
+
+        $actual = $this->index->handle('A');
+        $expected = 'U';
+        
+        $this->assertSame($expected, $actual);
+    }
+
  
 }

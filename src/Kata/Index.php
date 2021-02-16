@@ -4,8 +4,9 @@ namespace Kata;
 
 class Index
 {
-    public function handle(): bool
+    public function handle(string $letter): string
     {
-        return true;
+        return 'U';
     }
+
 }
