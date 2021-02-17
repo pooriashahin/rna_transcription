@@ -1,12 +1,32 @@
 <?php
 
+namespace Kata;
+
 class Nucleotide
 {
-    public string $letter;
-    
-    public function __construct(string $nucleotide)
+    public function convertDnaToRna($nucleotide): string 
     {
-        $this->letter = $nucleotide;
+        if ($nucleotide === 'A')
+        {
+            return 'U';
+        }
+
+        if ($nucleotide === 'C')
+        {
+            return 'G';
+        }
+
+        if ($nucleotide === 'G')
+        {
+            return 'C';
+        }
+
+        if ($nucleotide === 'T')
+        {
+            return 'A';
+        }
+
     }
+    
 
 }
