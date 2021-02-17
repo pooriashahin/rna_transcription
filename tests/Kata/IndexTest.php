@@ -3,18 +3,20 @@
 namespace Kata;
 
 use PHPUnit\Framework\TestCase;
-use Kata\Index;
-
+use Kata\Transcription;
+//use Kata\Nucleotide;
+include "Kata/Nucleotide.php";
 class IndexTest extends TestCase
 {
     protected function setUp(): void
     {
-        $this->index = new Index();
+        $this->index = new Transcription();
     }
 
     public function testABecomesU(): void 
     {
-        $actual = $this->index->handle('A');
+        $nucleotide = new Nucleotide();
+        $actual = $this->nucleotide->handle('A');
         $expected = 'U';
         $this->assertSame($expected, $actual);
     }

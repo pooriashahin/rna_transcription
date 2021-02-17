@@ -2,9 +2,9 @@
 
 namespace Kata;
 
-class Index
+class Transcription
 {
-    public function handle(string $nucleotide): string
+    public function handle(Nucleotide $nucleotide): string
     {
         if ($nucleotide === 'T')
         {
@@ -20,5 +20,4 @@ class Index
         }
         return 'U';
     }
-
 }
