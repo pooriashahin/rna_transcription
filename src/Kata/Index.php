@@ -22,3 +22,6 @@ class Index
     }
 
 }
+
+$rna = new Index();
+echo $rna->handle('T');
