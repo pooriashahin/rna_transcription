@@ -3,39 +3,45 @@
 namespace Kata;
 
 use PHPUnit\Framework\TestCase;
-use Kata\Index;
+
+use Kata\Transcription;
+
 
 class IndexTest extends TestCase
 {
     protected function setUp(): void
     {
-        $this->index = new Index();
+        $this->index = new Transcription();
     }
 
     public function testABecomesU(): void 
     {
-        $actual = $this->index->handle('A');
+        $nucleotide = new Nucleotide();
+        $actual = $nucleotide->convertDnaToRna('A');
         $expected = 'U';
         $this->assertSame($expected, $actual);
     }
 
     public function testCBecomesG(): void 
     {
-        $actual = $this->index->handle('C');
+        $nucleotide = new Nucleotide();
+        $actual = $nucleotide->convertDnaToRna('C');
         $expected = 'G';
         $this->assertSame($expected, $actual);
     }
 
     public function testGBecomesC(): void 
     {
-        $actual = $this->index->handle('G');
+        $nucleotide = new Nucleotide();
+        $actual = $nucleotide->convertDnaToRna('G');
         $expected = 'C';
         $this->assertSame($expected, $actual);
     }
 
     public function testTBecomesA(): void 
     {
-        $actual = $this->index->handle('T');
+        $nucleotide = new Nucleotide();
+        $actual = $nucleotide->convertDnaToRna('T');
         $expected = 'A';
         $this->assertSame($expected, $actual);
     }
