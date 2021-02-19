@@ -4,8 +4,39 @@ namespace Kata;
 
 class Nucleotide
 {
-    public function convertDnaToRna($nucleotide): string 
+
+    public function breakDna($nucleotide)
     {
+        
+        for ($i = 0; $i <= strlen($nucleotide)-1; $i++)
+        {
+            //echo $nucleotide[$i];
+            if ($nucleotide[$i] === 'A')
+        {
+            echo 'U';
+        }
+
+        if ($nucleotide[$i] === 'C')
+        {
+            echo 'G';
+        }
+
+        if ($nucleotide[$i] === 'G')
+        {
+            echo 'C';
+        }
+
+        if ($nucleotide[$i] === 'T')
+        {
+            echo 'A';
+        }
+        }
+    }
+
+    public function convertDnaToRna($nucleotide): string 
+        {
+        
+      
         if ($this->isNucleotideA($nucleotide))
         {
             return 'U';
@@ -25,9 +56,9 @@ class Nucleotide
         {
             return 'A';
         }
-    }
-
-
+        }
+    
+    
     
     private function isNucleotideA($nucleotide): bool
     {
@@ -51,3 +82,5 @@ class Nucleotide
 
 
 }
+$j = new Nucleotide();
+echo $j->breakDna('CCCG');
