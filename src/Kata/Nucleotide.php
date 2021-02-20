@@ -33,7 +33,7 @@ class Nucleotide
         for ($i=1; $i <= strlen($nucleotide)-1; $i++)
         {
             switch ($nucleotide[$i]) {
-                case 'T':
+                case $this->isNucleotideT($nucleotide[$i]):
                     return 'A';
                     break;
                 
