@@ -6,8 +6,12 @@ class Nucleotide
 {   
    public function convertDnaToRna($nucleotide): string 
         {
+            for ($i=0; $i <+ strlen($nucleotide)-1; $i++)
+            {
+                echo $i;
+            }
         
-            if ($nucleotide === 'TT')
+        if ($nucleotide === 'TT')
         {
             return 'AA';
         }
@@ -56,4 +60,9 @@ class Nucleotide
     }
 
 
+}
+$nucleotide = 'TTACGG';
+for ($i=0; $i <+ strlen($nucleotide)-1; $i++)
+{
+    echo $nucleotide[$i];
 }
