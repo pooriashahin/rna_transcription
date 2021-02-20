@@ -45,7 +45,7 @@ class IndexTest extends TestCase
         $expected = 'A';
         $this->assertSame($expected, $actual);
     }
-    
+
     public function testTTBecomesAA(): void 
     {
         $nucleotide = new Nucleotide();
@@ -53,6 +53,9 @@ class IndexTest extends TestCase
         $expected = 'AA';
         $this->assertSame($expected, $actual);
     }
+    
+   
+    
 
 
 
