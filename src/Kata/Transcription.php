@@ -9,9 +9,3 @@ class Transcription
         return $nucleotide->convertDnaToRna();
     }
 }
-
-$nucleotide = 'ATT';
-for ($i = 0; $i <= strlen($nucleotide)-1; $i++)
-{
-    echo $nucleotide[$i];
-}

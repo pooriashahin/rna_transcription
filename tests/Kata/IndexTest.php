@@ -54,22 +54,6 @@ class IndexTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
-    public function testTTTBecomesAAA(): void 
-    {
-        $nucleotide = new Nucleotide();
-        $actual = $nucleotide->convertDnaToRna('TTT');
-        $expected = 'AAA';
-        $this->assertSame($expected, $actual);
-    }
-
-    public function testBreakDna(): void 
-    {
-        $nucleotide = new Nucleotide();
-        $actual = $nucleotide->convertDnaToRna('CCCG');
-        $expected = 'GGGC';
-        $this->assertSame($expected, $actual);
-    }
- 
 
 
 
