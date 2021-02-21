@@ -4,90 +4,40 @@ namespace Kata;
 
 class Nucleotide
 {   
-    public function convert1stToRna($nucleotide)
+
+    public function convertDnaToRna($nucleotide)
     {
-        for ($i=0; $i <= strlen($nucleotide)-1; $i++)
-        {
-            switch ($nucleotide[$i]) {
-                case 'T':
-                    return 'A';
-                    break;
-                
-                case 'A':
-                    return 'U';
-                    break;
-    
-                case 'C':
-                    return 'G';
-                    break;
-                
-                case 'G':
-                    return 'C';
-                    break;
-            }
-        }
+        return $this->foreachFunction($nucleotide);
     }
 
-    public function convert2ndToRna($nucleotide)
+    public function foreachFunction($nucleotide)
     {
-        for ($i=1; $i <= strlen($nucleotide)-1; $i++)
+        foreach(str_split($nucleotide) as $i)
         {
-            switch ($nucleotide[$i]) {
-                case $this->isNucleotideT($nucleotide[$i]):
-                    return 'A';
-                    break;
-                
-                case 'A':
-                    return 'U';
-                    break;
-    
-                case 'C':
-                    return 'G';
-                    break;
-                
-                case 'G':
-                    return 'C';
-                    break;
-            }
-        }
-    }
-
-    
-
-   public function convertDnaToRna($nucleotide): string 
-      
-        {
-            return $this->convert1stToRna($nucleotide) . $this->convert2ndToRna($nucleotide);
-            
-
-           /* for ($i=0; $i <= strlen($nucleotide)-1; $i++)
+        switch ($i)
             {
-                return $nucleotide[$i];
-            }
+                case $this->isNucleotideT($i):
+                    echo 'A';
+                    break;
         
+                case $this->isNucleotideA($i):
+                    echo 'U';
+                    break;
 
-        if ($this->isNucleotideA($nucleotide[0]))
-        {
-            return 'U';
+                case $this->isNucleotideC($i):
+                    echo 'G';
+                    break;
+        
+                case $this->isNucleotideG($i):
+                    echo 'C';
+                    break;
+            }    
         }
+    }
 
-        if ($this->isNucleotideC($nucleotide[0]))
-        {
-            return 'G';
-        }
-
-        if ($this->isNucleotideG($nucleotide[0]))
-        {
-            return 'C';
-        }
-
-        if ($this->isNucleotideT($nucleotide[0]))
-        {
-            return 'A';
-        }*/
 
        
-        }
+
     
     
     
@@ -111,11 +61,7 @@ class Nucleotide
         return $nucleotide === 'T';
     }
 
-    public function printIt($nucleotide)
-    {
-        return $this->convertDnaToRna($nucleotide);
-    }
-
-
 }
 
+$j = new Nucleotide();
+$j->convertDnaToRna('TT');

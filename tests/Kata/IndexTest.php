@@ -7,11 +7,11 @@ use PHPUnit\Framework\TestCase;
 use Kata\Transcription;
 
 
-class IndexTest extends TestCase
+class TranscriptionTest extends TestCase
 {
     protected function setUp(): void
     {
-        $this->index = new Transcription();
+        $this->transcription = new Transcription();
     }
 
     public function testABecomesU(): void 
@@ -48,8 +48,8 @@ class IndexTest extends TestCase
 
     public function testTTBecomesAA(): void 
     {
-        $nucleotide = new Nucleotide();
-        $actual = $nucleotide->convertDnaToRna('TT');
+        $j = new Nucleotide();
+        $actual = $j->convertDnaToRna('TT');
         $expected = 'AA';
         $this->assertSame($expected, $actual);
     }
