@@ -48,17 +48,18 @@ class TranscriptionTest extends TestCase
 
     public function testTTBecomesAA(): void 
     {
-        $j = new Nucleotide();
-        $actual = $j->convertDnaToRna('TT');
+        $nucleotide = new Nucleotide();
+        $actual = $nucleotide->convertDnaToRna('TT');
         $expected = 'AA';
         $this->assertSame($expected, $actual);
     }
     
+    public function testLongDnaChainBecomesLongRnaChain(): void 
+    {
+        $nucleotide = new Nucleotide();
+        $actual = $nucleotide->convertDnaToRna('TCGATCGATTT');
+        $expected = 'AGCUAGCUAAA';
+        $this->assertSame($expected, $actual);
+    }
    
-    
-
-
-
-
- 
 }

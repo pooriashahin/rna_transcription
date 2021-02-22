@@ -12,27 +12,31 @@ class Nucleotide
 
     public function foreachFunction($nucleotide)
     {
-        foreach(str_split($nucleotide) as $i)
+        $array =[];
+
+        foreach(str_split($nucleotide) as $nucleotide)
         {
-        switch ($i)
+        switch ($nucleotide)
             {
-                case $this->isNucleotideT($i):
-                    echo 'A';
+                case $this->isNucleotideT($nucleotide):
+                    array_push($array, 'A');
                     break;
         
-                case $this->isNucleotideA($i):
-                    echo 'U';
+                case $this->isNucleotideA($nucleotide):
+                    array_push($array, 'U');
                     break;
 
-                case $this->isNucleotideC($i):
-                    echo 'G';
+                case $this->isNucleotideC($nucleotide):
+                    array_push($array, 'G');
                     break;
         
-                case $this->isNucleotideG($i):
-                    echo 'C';
+                case $this->isNucleotideG($nucleotide):
+                    array_push($array, 'C');
                     break;
-            }    
+            } 
+         
         }
+        return implode($array);  
     }
 
 
@@ -63,5 +67,6 @@ class Nucleotide
 
 }
 
+    
 $j = new Nucleotide();
-$j->convertDnaToRna('TT');
+echo $j->convertDnaToRna('TTACCCCCC');
