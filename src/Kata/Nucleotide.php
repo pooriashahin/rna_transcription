@@ -16,7 +16,7 @@ class Nucleotide
 
         foreach(str_split($nucleotide) as $nucleotide)
         {
-        switch ($nucleotide)
+            switch ($nucleotide)
             {
                 case $this->isNucleotideT($nucleotide):
                     array_push($array, 'A');
@@ -34,7 +34,6 @@ class Nucleotide
                     array_push($array, 'C');
                     break;
             } 
-         
         }
         return implode($array);  
     }
