@@ -4,34 +4,41 @@ namespace Kata;
 
 class Nucleotide
 {   
+    Const A = 'A';
+    Const T = 'T';
+    Const C = 'C';
+    Const G = 'G';
+    Const U = 'U';
 
-    public function convertDnaToRna($nucleotide)
+    private string $value;
+
+    public function __construct(string $nucleotide)
     {
-        return $this->foreachFunction($nucleotide);
-    }
-
-    public function foreachFunction($nucleotide)
+        $this->value = $nucleotide;
+    } 
+    
+    public function convertDnaToRna()
     {
         $array =[];
 
-        foreach(str_split($nucleotide) as $nucleotide)
+        foreach(str_split($this->value) as $this->value )
         {
-            switch ($nucleotide)
+            switch ($this->value)
             {
-                case $this->isNucleotideT($nucleotide):
-                    array_push($array, 'A');
+                case $this->isNucleotideT():
+                    array_push($array, self::A);
                     break;
         
-                case $this->isNucleotideA($nucleotide):
-                    array_push($array, 'U');
+                case $this->isNucleotideA():
+                    array_push($array, self::U);
                     break;
 
-                case $this->isNucleotideC($nucleotide):
-                    array_push($array, 'G');
+                case $this->isNucleotideC():
+                    array_push($array, self::G);
                     break;
         
-                case $this->isNucleotideG($nucleotide):
-                    array_push($array, 'C');
+                case $this->isNucleotideG():
+                    array_push($array, self::C);
                     break;
             } 
         }
@@ -44,28 +51,24 @@ class Nucleotide
     
     
     
-    private function isNucleotideA($nucleotide): bool
+    private function isNucleotideA(): bool
     {
-        return $nucleotide === 'A';
+        return $this->value === self::A;
     }
 
-    private function isNucleotideC($nucleotide): bool
+    private function isNucleotideC(): bool
     {
-        return $nucleotide === 'C';
+        return $this->value === self::C;
     }
 
-    private function isNucleotideG($nucleotide): bool
+    private function isNucleotideG(): bool
     {
-        return $nucleotide === 'G';
+        return $this->value === self::G;
     }
 
-    private function isNucleotideT($nucleotide): bool
+    private function isNucleotideT(): bool
     {
-        return $nucleotide === 'T';
+        return $this->value === self::T;
     }
 
 }
-
-    
-$j = new Nucleotide();
-echo $j->convertDnaToRna('TTACCCCCC');

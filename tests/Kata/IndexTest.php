@@ -16,49 +16,50 @@ class TranscriptionTest extends TestCase
 
     public function testABecomesU(): void 
     {
-        $nucleotide = new Nucleotide();
-        $actual = $nucleotide->convertDnaToRna('A');
+        $actual = $this->transcription->handle(new Nucleotide('A'));
         $expected = 'U';
         $this->assertSame($expected, $actual);
     }
 
     public function testCBecomesG(): void 
     {
-        $nucleotide = new Nucleotide();
-        $actual = $nucleotide->convertDnaToRna('C');
+        $actual = $this->transcription->handle(new Nucleotide('C'));
         $expected = 'G';
         $this->assertSame($expected, $actual);
     }
 
     public function testGBecomesC(): void 
     {
-        $nucleotide = new Nucleotide();
-        $actual = $nucleotide->convertDnaToRna('G');
+        $actual = $this->transcription->handle(new Nucleotide('G'));
         $expected = 'C';
         $this->assertSame($expected, $actual);
     }
 
     public function testTBecomesA(): void 
     {
-        $nucleotide = new Nucleotide();
-        $actual = $nucleotide->convertDnaToRna('T');
+        $actual = $this->transcription->handle(new Nucleotide('T'));
         $expected = 'A';
         $this->assertSame($expected, $actual);
     }
 
     public function testTTBecomesAA(): void 
     {
-        $nucleotide = new Nucleotide();
-        $actual = $nucleotide->convertDnaToRna('TT');
+        $actual = $this->transcription->handle(new Nucleotide('TT'));
         $expected = 'AA';
         $this->assertSame($expected, $actual);
     }
     
     public function testLongDnaChainBecomesLongRnaChain(): void 
     {
-        $nucleotide = new Nucleotide();
-        $actual = $nucleotide->convertDnaToRna('TCGATCGATTT');
+        $actual = $this->transcription->handle(new Nucleotide('TCGATCGATTT'));
         $expected = 'AGCUAGCUAAA';
+        $this->assertSame($expected, $actual);
+    }
+
+    public function testTTBecomesAAAgain(): void 
+    {
+        $actual = $this->transcription->handle(new Nucleotide('TT'));
+        $expected = 'AA';
         $this->assertSame($expected, $actual);
     }
    
