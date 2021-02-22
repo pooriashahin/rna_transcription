@@ -12,6 +12,8 @@ class Nucleotide
 
     private string $value;
 
+    private array $array =[];
+
     public function __construct(string $nucleotide)
     {
         $this->value = $nucleotide;
@@ -19,38 +21,37 @@ class Nucleotide
     
     public function convertDnaToRna()
     {
-        $array =[];
-
         foreach(str_split($this->value) as $this->value )
         {
-            switch ($this->value)
-            {
-                case $this->isNucleotideT():
-                    array_push($array, self::A);
-                    break;
-        
-                case $this->isNucleotideA():
-                    array_push($array, self::U);
-                    break;
-
-                case $this->isNucleotideC():
-                    array_push($array, self::G);
-                    break;
-        
-                case $this->isNucleotideG():
-                    array_push($array, self::C);
-                    break;
-            } 
+            $this->replaceEachDnaNucleotideWithRnaNucleotide();
         }
-        return implode($array);  
+        return implode($this->array);  
     }
 
 
-       
+    private function replaceEachDnaNucleotideWithRnaNucleotide()
+    {
+        switch ($this->value)
+        {
+            case $this->isNucleotideT():
+                array_push($this->array, self::A);
+                break;
+        
+            case $this->isNucleotideA():
+                array_push($this->array, self::U);
+                break;
 
-    
-    
-    
+            case $this->isNucleotideC():
+                array_push($this->array, self::G);
+                break;
+        
+            case $this->isNucleotideG():
+                array_push($this->array, self::C);
+                break;
+        } 
+    }
+
+
     private function isNucleotideA(): bool
     {
         return $this->value === self::A;
