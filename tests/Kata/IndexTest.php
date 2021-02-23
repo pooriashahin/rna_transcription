@@ -14,10 +14,18 @@ class TranscriptionTest extends TestCase
         $this->transcription = new Transcription();
     }
 
-    public function testDnaGIsTransformedToRnaC() {
+    public function testDnaNucleotideGIsTransformedToRnaNucleotideC() {
         $expected = new RnaNucleotide('C');
 
         $actual = $this->transcription->convertDnaNucleotideToRnaNucleotide('G');
+
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testDnaNucleotideCIsTransformedToRnaNucleotideG() {
+        $expected = new RnaNucleotide('G');
+
+        $actual = $this->transcription->convertDnaNucleotideToRnaNucleotide('C');
 
         $this->assertEquals($expected, $actual);
     }
