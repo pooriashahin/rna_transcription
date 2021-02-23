@@ -16,7 +16,7 @@ class TranscriptionTest extends TestCase
     public function testDnaGIsTransformedToRnaC() {
         $expected = 'C';
 
-        $actual = $this->transcription->handle('G');
+        $actual = $this->transcription->convertDnaNucleotideToRnaNucleotide('G');
 
         $this->assertEquals($expected, $actual);
     }
