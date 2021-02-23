@@ -10,10 +10,9 @@ class DnaNucleotide {
         $this->value = $dnaNucleotide;
     }
 
-    public function isEquals(DnaNucleotide $dnaNucleotide): bool
+    public function areYouEqualTo(DnaNucleotide $dnaNucleotide): bool
     {
         return $this->value === $dnaNucleotide->value;
     }
 
 }
-
