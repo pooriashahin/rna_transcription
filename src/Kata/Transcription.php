@@ -8,7 +8,7 @@ class Transcription
 
     public function convertDnaNucleotideToRnaNucleotide(DnaNucleotide $dnaNucleotide): RnaNucleotide
     {
-        if ($dnaNucleotide->value === 'G') { 
+        if ($dnaNucleotide->isEqual(new DnaNucleotide('G'))) { 
             return new RnaNucleotide('C');
         }
         
