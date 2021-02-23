@@ -16,49 +16,49 @@ class TranscriptionTest extends TestCase
 
     public function testABecomesU(): void 
     {
-        $actual = $this->transcription->handle(new Nucleotide('A'));
+        $actual = $this->transcription->handle(new DnaConverter('A'));
         $expected = 'U';
         $this->assertSame($expected, $actual);
     }
 
     public function testCBecomesG(): void 
     {
-        $actual = $this->transcription->handle(new Nucleotide('C'));
+        $actual = $this->transcription->handle(new DnaConverter('C'));
         $expected = 'G';
         $this->assertSame($expected, $actual);
     }
 
     public function testGBecomesC(): void 
     {
-        $actual = $this->transcription->handle(new Nucleotide('G'));
+        $actual = $this->transcription->handle(new DnaConverter('G'));
         $expected = 'C';
         $this->assertSame($expected, $actual);
     }
 
     public function testTBecomesA(): void 
     {
-        $actual = $this->transcription->handle(new Nucleotide('T'));
+        $actual = $this->transcription->handle(new DnaConverter('T'));
         $expected = 'A';
         $this->assertSame($expected, $actual);
     }
 
     public function testTTBecomesAA(): void 
     {
-        $actual = $this->transcription->handle(new Nucleotide('TT'));
+        $actual = $this->transcription->handle(new DnaConverter('TT'));
         $expected = 'AA';
         $this->assertSame($expected, $actual);
     }
     
     public function testLongDnaChainBecomesLongRnaChain(): void 
     {
-        $actual = $this->transcription->handle(new Nucleotide('TCGATCGATTT'));
+        $actual = $this->transcription->handle(new DnaConverter('TCGATCGATTT'));
         $expected = 'AGCUAGCUAAA';
         $this->assertSame($expected, $actual);
     }
 
     public function testTTBecomesAAAgain(): void 
     {
-        $actual = $this->transcription->handle(new Nucleotide('TT'));
+        $actual = $this->transcription->handle(new DnaConverter('TT'));
         $expected = 'AA';
         $this->assertSame($expected, $actual);
     }
