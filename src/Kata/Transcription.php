@@ -5,9 +5,9 @@ namespace Kata;
 
 class Transcription
 {
-    
-    public function convertDnaNucleotideToRnaNucleotide(): string
+
+    public function convertDnaNucleotideToRnaNucleotide(): RnaNucleotide
     {
-        return 'C';
+        return new RnaNucleotide('C');
     }
 }
