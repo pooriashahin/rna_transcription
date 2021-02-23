@@ -6,9 +6,9 @@ namespace Kata;
 class Transcription
 {
 
-    public function convertDnaNucleotideToRnaNucleotide(string $dnaNucleotide): RnaNucleotide
+    public function convertDnaNucleotideToRnaNucleotide(DnaNucleotide $dnaNucleotide): RnaNucleotide
     {
-        if ($dnaNucleotide === 'G') { 
+        if ($dnaNucleotide->value === 'G') { 
             return new RnaNucleotide('C');
         }
         

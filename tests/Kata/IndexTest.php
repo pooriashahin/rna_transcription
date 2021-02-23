@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 use Kata\Transcription;
 use Kata\RnaNucleotide;
+use Kata\DnaNucleotide;
 
 class TranscriptionTest extends TestCase
 {
@@ -17,7 +18,7 @@ class TranscriptionTest extends TestCase
     public function testDnaNucleotideGIsTransformedToRnaNucleotideC() {
         $expected = new RnaNucleotide('C');
 
-        $actual = $this->transcription->convertDnaNucleotideToRnaNucleotide('G');
+        $actual = $this->transcription->convertDnaNucleotideToRnaNucleotide(new DnaNucleotide('G'));
 
         $this->assertEquals($expected, $actual);
     }
@@ -25,7 +26,7 @@ class TranscriptionTest extends TestCase
     public function testDnaNucleotideCIsTransformedToRnaNucleotideG() {
         $expected = new RnaNucleotide('G');
 
-        $actual = $this->transcription->convertDnaNucleotideToRnaNucleotide('C');
+        $actual = $this->transcription->convertDnaNucleotideToRnaNucleotide(new DnaNucleotide('C'));
 
         $this->assertEquals($expected, $actual);
     }
