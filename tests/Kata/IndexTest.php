@@ -5,6 +5,7 @@ namespace Kata;
 use PHPUnit\Framework\TestCase;
 
 use Kata\Transcription;
+use Kata\RnaNucleotide;
 
 class TranscriptionTest extends TestCase
 {
@@ -14,7 +15,7 @@ class TranscriptionTest extends TestCase
     }
 
     public function testDnaGIsTransformedToRnaC() {
-        $expected = 'C';
+        $expected = new RnaNucleotide('C');
 
         $actual = $this->transcription->convertDnaNucleotideToRnaNucleotide('G');
 
