@@ -13,4 +13,12 @@ class TranscriptionTest extends TestCase
         $this->transcription = new Transcription();
     }
 
+    public function testDnaGIsTransformedToRnaC() {
+        $expected = 'C';
+
+        $actual = $this->transcription->handle('G');
+
+        $this->assertEquals($expected, $actual);
+    }
+
 }
