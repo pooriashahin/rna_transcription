@@ -5,8 +5,8 @@ namespace Kata;
 
 class Transcription
 {
-    public function handle(DnaConverter $dnaStrand): string
+    public function handle(): void
     {
-        return $dnaStrand->convertDnaToRna();
+        
     }
 }
