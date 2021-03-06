@@ -2,12 +2,17 @@
 
 namespace Kata;
 
-use PHPUnit\Framework\TestCase;
-use Kata\Index;
-
 class DnaNucleotide
 {
-    
+    private string $value;
+
+    private array $array =[];
+
+    public function convertStrandToDnaNucleotide(string $strand)
+    {
+        return str_split($strand);
+    }
+
 
  
 }

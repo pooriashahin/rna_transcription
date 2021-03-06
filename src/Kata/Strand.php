@@ -12,12 +12,10 @@ class Strand
 
     private string $value;
 
-    private array $array =[];
-
-    public function __construct(string $dnaStrand)
+    public function handle(string $strand)
     {
-        $this->value = $dnaStrand;
-    } 
+        return $strand;
+    }
     
     public function convertDnaToRna()
     {
@@ -28,9 +26,6 @@ class Strand
         return implode($this->array);  
     }
 
-    public function replaceEachDnaNucleotideWithRnaNucleotide()
-    {
-    }
-   
+ 
 
 }

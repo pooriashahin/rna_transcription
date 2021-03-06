@@ -3,20 +3,30 @@
 namespace Kata;
 
 use PHPUnit\Framework\TestCase;
-use Kata\Index;
+use Kata\Strand;
+use Kata\RnaNucleotide;
 
 class StrandTest extends TestCase
 {
     protected function setUp(): void
     {
-        $this->index = new Strand();
+        $this->strand = new Strand();
     }
 
     public function testStrand(): void
     {
-        $expected =
-        $actual = 
-        assersame
+        $expected = ['U'];
+        $this->dnaNucleotide = new DnaNucleotide();
+        $actual = $this->dnaNucleotide->convertStrandToDnaNucleotide('U');
+        $this->assertSame($expected, $actual);
+    }
+
+    public function testRna(): void
+    {
+        $expected = ['U'];
+        $this->rnaNucleotide = new RnaNucleotide();
+        $actual = $this->rnaNucleotide->convertDnaToRna('A');
+        $this->assertSame($expected, $actual);
     }
 
     
