@@ -32,7 +32,7 @@ class DnaConverter
     {
         switch ($this->value)
         {
-            case $this->isNucleotideT():
+            case $this->isNucleotide(self::T):
                 array_push($this->array, self::A);
                 break;
         
@@ -51,24 +51,11 @@ class DnaConverter
     }
 
 
-    private function isNucleotideA(): bool
+    private function isNucleotide(string $dnaStrand): bool
     {
-        return $this->value === self::A;
+        return $this->value === $dnaStrand;
     }
 
-    private function isNucleotideC(): bool
-    {
-        return $this->value === self::C;
-    }
-
-    private function isNucleotideG(): bool
-    {
-        return $this->value === self::G;
-    }
-
-    private function isNucleotideT(): bool
-    {
-        return $this->value === self::T;
-    }
+   
 
 }
