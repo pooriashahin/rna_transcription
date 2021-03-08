@@ -8,9 +8,9 @@ class DnaNucleotide
 
     private array $array =[];
 
-    public function convertStrandToDnaNucleotide(string $strand)
+    public function convertDnaStrandToDnaNucleotide(DnaStrand $dnaStrand)
     {
-        return str_split($strand);
+        return str_split($dnaStrand);
     }
 
 

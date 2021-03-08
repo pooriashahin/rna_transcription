@@ -2,14 +2,14 @@
 
 
 
-$key = ['jack'=>'joe', 'jill', 'mike'];
+$key = ['jack', 'jill', 'mike'];
 
 
-
+$key[0] = ['jack'=>'jimmy'];
 foreach($key as $i)
 {
-    if ($i === 'joe')
-    {
+    
+   
     echo "$i<br>";
-    }
+    
 }
