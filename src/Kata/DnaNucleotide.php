@@ -8,11 +8,11 @@ class DnaNucleotide
 
     private array $array =[];
 
-    public function convertDnaStrandToDnaNucleotide(DnaStrand $dnaStrand)
+    public function convertDnaStrandToDnaNucleotide(DnaStrand $dnaStrand): DnaStrand
     {
-        return str_split($dnaStrand);
+        return $dnaStrand->strand();
     }
 
-
- 
+    
+    
 }

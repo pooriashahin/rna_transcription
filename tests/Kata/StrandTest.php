@@ -6,28 +6,22 @@ use PHPUnit\Framework\TestCase;
 use Kata\DnaStrand;
 use Kata\RnaNucleotide;
 
-class StrandTest extends TestCase
+class DnaStrandTest extends TestCase
 {
     protected function setUp(): void
     {
-        $this->dnaNucleotide = new DnaNucleotide();
+        $this->dnaStrand = new DnaStrand('U');
     }
 
     public function testDnaStrand(): void
     {
-        $expected = ['U'];
-        
+        $expected = 'U';
+        $this->dnaNucleotide = new DnaNucleotide();
         $actual = $this->dnaNucleotide->convertDnaStrandToDnaNucleotide('U');
         $this->assertSame($expected, $actual);
     }
 
-    public function testRna(): void
-    {
-        $expected = ['U'];
-        $this->rnaNucleotide = new RnaNucleotide();
-        $actual = $this->rnaNucleotide->convertDnaToRna('A');
-        $this->assertSame($expected, $actual);
-    }
+
 
     
  

@@ -12,12 +12,20 @@ class DnaStrand
 
     private string $value;
 
-    public function dnaStrand(string $dnaStrand)
+    public function __construct(string $dnaStrand)
     {
-        return $dnaStrand;
+      $this->value = $dnaStrand;
        
     }
 
+    public function strand()
+    {
+        return $this->value;
+    }
+
+    
+
+   
  
 
 }
