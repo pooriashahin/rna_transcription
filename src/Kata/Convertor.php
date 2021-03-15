@@ -5,11 +5,19 @@ namespace Kata;
 class Convertor
 
 {
-    public function toRna(string $strand): string
+
+    
+    public function toRna(DnaStrand $dnaStrand): RnaStrand
     {
-        if ($strand === 'G') {
+        if ($dnaStrand->isNucleotide(new DnaStrand('G'))) {
             return 'C';
         }
+
+        if ($dnaStrand->isNucleotide(new DnaStrand('T'))) {
+            return 'A';
+        }
+
         return 'G';
+    
     }
 }

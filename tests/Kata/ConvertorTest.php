@@ -4,6 +4,7 @@ namespace Kata;
 
 use PHPUnit\Framework\TestCase;
 use Kata\Convertor;
+use Kata\DnaStrand;
 
 class IndexTest extends TestCase
 {
@@ -17,24 +18,24 @@ class IndexTest extends TestCase
         $this->assertSame('G', $this->convertor->toRna('C'));
     }
 
-    public function testTranscribesCytosineToGuanine() : void
+    /*public function testTranscribesCytosineToGuanine() : void
     {
-        $this->assertSame('C', $this->convertor->toRna('G'));
+        $this->assertSame('C', toRna('G'));
     }
 
-    /*public function testTranscribesThymineToAdenine() : void
+    public function testTranscribesThymineToAdenine() : void
     {
-        $this->assertSame('A', $this->convertor->toRna('T'));
+        $this->assertSame('A', toRna('T'));
     }
 
     public function testTranscribesAdenineToUracil() : void
     {
-        $this->assertSame('U', $this->convertor->toRna('A'));
+        $this->assertSame('U', toRna('A'));
     }
 
     public function testTranscribesAllOccurencesOne() : void
     {
-        $this->assertSame('UGCACCAGAAUU', $this->convertor->toRna('ACGTGGTCTTAA'));
+        $this->assertSame('UGCACCAGAAUU', toRna('ACGTGGTCTTAA'));
     }*/
 
  
