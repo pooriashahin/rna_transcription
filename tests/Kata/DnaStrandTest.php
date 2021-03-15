@@ -5,6 +5,7 @@ namespace Kata;
 use PHPUnit\Framework\TestCase;
 use Kata\DnaStrand;
 use Kata\RnaNucleotide;
+use Kata\DnaNucleotide;
 
 class DnaStrandTest extends TestCase
 {
