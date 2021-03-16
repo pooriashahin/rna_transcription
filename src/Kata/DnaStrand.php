@@ -12,4 +12,9 @@ class DnaStrand
         $this->strand = $dnaStrand;
     }
 
+    public function a(DnaStrand $dnaStrand)
+    {
+        return $this->strand;
+    }
+
 }

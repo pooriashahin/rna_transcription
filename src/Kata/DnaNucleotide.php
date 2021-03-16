@@ -12,7 +12,7 @@ class DnaNucleotide
         $this->nucleotide = $dnaNucleotide;
     }
 
-    public function convertDnaNucleotideToRnaNucleotide(DnaNucleotide $dnaNucleotide)
+    public function convertDnaNucleotideToRnaNucleotide(DnaNucleotide $dnaNucleotide): array
     {
         $rnaNucleotide = [
             'C'=>'G',

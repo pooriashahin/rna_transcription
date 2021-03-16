@@ -5,8 +5,8 @@ namespace Kata;
 class RnaConvertor
 
 {
-    public function convertDnaStrandToRnaStrand(DnaNucleotide $dnaNucleotide): string
+    public function convertDnaStrandToRnaStrand(DnaNucleotide $dnaNucleotide): RnaStrand
     {
-        return implode($dnaNucleotide->convertDnaNucleotideToRnaNucleotide($dnaNucleotide));    
+        return new RnaStrand(implode($dnaNucleotide->convertDnaNucleotideToRnaNucleotide($dnaNucleotide)));    
     }
 }

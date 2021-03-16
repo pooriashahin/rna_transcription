@@ -18,36 +18,36 @@ class IndexTest extends TestCase
     {
         
         $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaNucleotide('G'));
-        $expected = 'C';
-        $this->assertSame($expected, $actual);
+        $expected = new RnaStrand('C');
+        $this->assertEquals($expected, $actual);
     }
 
     public function testTranscribesCytosineToGuanine() : void
     {
         $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaNucleotide('C'));
-        $expected = 'G';
-        $this->assertSame($expected, $actual);
+        $expected = new RnaStrand('G');
+        $this->assertEquals($expected, $actual);
     }
 
     public function testTranscribesThymineToAdenine() : void
     {
         $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaNucleotide('T'));
-        $expected = 'A';
-        $this->assertSame($expected, $actual);
+        $expected = new RnaStrand('A');
+        $this->assertEquals($expected, $actual);
     }
 
     public function testTranscribesAdenineToUracil() : void
     {
         $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaNucleotide('A'));
-        $expected = 'U';
-        $this->assertSame($expected, $actual);
+        $expected = new RnaStrand('U');
+        $this->assertEquals($expected, $actual);
     }
 
     public function testTranscribesAllOccurencesOne() : void
     {
         $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaNucleotide('ACGTGGTCTTAA'));
-        $expected = 'UGCACCAGAAUU';
-        $this->assertSame($expected, $actual);
+        $expected = new RnaStrand('UGCACCAGAAUU');
+        $this->assertEquals($expected, $actual);
     }
 
  
