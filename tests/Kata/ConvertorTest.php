@@ -5,6 +5,7 @@ namespace Kata;
 use PHPUnit\Framework\TestCase;
 use Kata\Convertor;
 use Kata\DnaStrand;
+use Kata\RnaStrand;
 
 class IndexTest extends TestCase
 {
@@ -15,7 +16,10 @@ class IndexTest extends TestCase
 
     public function testTranscribesGuanineToCytosine() : void
     {
-        $this->assertSame('G', $this->convertor->toRna('C'));
+
+        $actual = $this->convertor->convertDnaNucleotideToRnaNucleotide(new DnaStrand('G'));
+        $expected = 'C';
+        $this->assertSame($expected, $actual);
     }
 
     /*public function testTranscribesCytosineToGuanine() : void
