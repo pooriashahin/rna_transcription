@@ -17,35 +17,35 @@ class IndexTest extends TestCase
     public function testTranscribesGuanineToCytosine() : void
     {
         
-        $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaNucleotide('G'));
+        $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaStrand('G'));
         $expected = new RnaStrand('C');
         $this->assertEquals($expected, $actual);
     }
 
     public function testTranscribesCytosineToGuanine() : void
     {
-        $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaNucleotide('C'));
+        $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaStrand('C'));
         $expected = new RnaStrand('G');
         $this->assertEquals($expected, $actual);
     }
 
     public function testTranscribesThymineToAdenine() : void
     {
-        $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaNucleotide('T'));
+        $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaStrand('T'));
         $expected = new RnaStrand('A');
         $this->assertEquals($expected, $actual);
     }
 
     public function testTranscribesAdenineToUracil() : void
     {
-        $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaNucleotide('A'));
+        $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaStrand('A'));
         $expected = new RnaStrand('U');
         $this->assertEquals($expected, $actual);
     }
 
     public function testTranscribesAllOccurencesOne() : void
     {
-        $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaNucleotide('ACGTGGTCTTAA'));
+        $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaStrand('ACGTGGTCTTAA'));
         $expected = new RnaStrand('UGCACCAGAAUU');
         $this->assertEquals($expected, $actual);
     }
