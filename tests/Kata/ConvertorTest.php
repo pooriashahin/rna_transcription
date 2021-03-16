@@ -3,44 +3,52 @@
 namespace Kata;
 
 use PHPUnit\Framework\TestCase;
-use Kata\Convertor;
+use Kata\RnaConvertor;
 use Kata\DnaStrand;
-use Kata\RnaStrand;
+use Kata\DnaNucleotide;
 
 class IndexTest extends TestCase
 {
     protected function setUp(): void
     {
-        $this->convertor = new Convertor();
+        $this->convertor = new RnaConvertor();
     }
 
     public function testTranscribesGuanineToCytosine() : void
     {
-
-        $actual = $this->convertor->convertDnaNucleotideToRnaNucleotide(new DnaStrand('G'));
+        
+        $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaNucleotide('G'));
         $expected = 'C';
         $this->assertSame($expected, $actual);
     }
 
-    /*public function testTranscribesCytosineToGuanine() : void
+    public function testTranscribesCytosineToGuanine() : void
     {
-        $this->assertSame('C', toRna('G'));
+        $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaNucleotide('C'));
+        $expected = 'G';
+        $this->assertSame($expected, $actual);
     }
 
     public function testTranscribesThymineToAdenine() : void
     {
-        $this->assertSame('A', toRna('T'));
+        $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaNucleotide('T'));
+        $expected = 'A';
+        $this->assertSame($expected, $actual);
     }
 
     public function testTranscribesAdenineToUracil() : void
     {
-        $this->assertSame('U', toRna('A'));
+        $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaNucleotide('A'));
+        $expected = 'U';
+        $this->assertSame($expected, $actual);
     }
 
     public function testTranscribesAllOccurencesOne() : void
     {
-        $this->assertSame('UGCACCAGAAUU', toRna('ACGTGGTCTTAA'));
-    }*/
+        $actual = $this->convertor->convertDnaStrandToRnaStrand(new DnaNucleotide('ACGTGGTCTTAA'));
+        $expected = 'UGCACCAGAAUU';
+        $this->assertSame($expected, $actual);
+    }
 
  
 }

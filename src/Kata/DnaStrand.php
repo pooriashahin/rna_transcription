@@ -12,12 +12,4 @@ class DnaStrand
         $this->strand = $dnaStrand;
     }
 
-    public function isDnaNucleotide(DnaStrand $anotherDnaStrand): bool
-    {
-        return $this->strand === $anotherDnaStrand->strand;
-    }
-
-  
-
-
 }
