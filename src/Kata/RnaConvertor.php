@@ -28,10 +28,7 @@ class RnaConvertor
                     array_push($rnaNucleotideList, $rnaNucleotide->value());
                     break;
 
-            }
-            
-
-            
+            } 
         }
         return new RnaStrand(implode($rnaNucleotideList));
     }
